@@ -33,6 +33,9 @@ class MainActivity : ComponentActivity() {
             var secondChoice by remember {
                 mutableStateOf("")
             }
+            var errorText by remember {
+                mutableStateOf("")
+            }
 
             Column {
 
@@ -44,20 +47,64 @@ class MainActivity : ComponentActivity() {
                 )
 
 
-                Text (text = "meal suggestion:")
-                Text (text = "firstChoice")
-                Text (text = "secondChoice" )
+                Text (text = errorText)
+                Text (text = firstChoice)
+                Text (text = secondChoice )
                 
                 Row {
                     Button(
-                        onClick = { /*TODO*/ }
-                    
+                        onClick = { /*TODO*/
+
+                            if (timeOfDay == "morning") {
+                                firstChoice = "1. Toasted Bread"
+                                secondChoice = "2. Porridge"
+                                errorText = "Meal Suggested:"
+                            }
+                            else if (timeOfDay == "mid-morning") {
+                                firstChoice = "1. Fruit Bowl"
+                                secondChoice = "2. Boiled Egg"
+                                errorText = "Meal Suggested:"
+                            }
+                            else if (timeOfDay == "afternoon") {
+                                firstChoice = "1. Sandwich"
+                                secondChoice = "2. Burger"
+                                errorText = "Meal Suggested:"
+                            }
+                            else if  (timeOfDay == "mid-afternoon") {
+                                firstChoice = "1. Biscuits"
+                                secondChoice = "2. Yogurt"
+                                errorText = "Meal Suggested:"
+                            }
+                            else if (timeOfDay == "dinner") {
+                                firstChoice = "1. Chicken Salad"
+                                secondChoice = "2. Dumpling"
+                                errorText = "Meal Suggested:"
+                            }
+                            else if (timeOfDay == "dinner-snack") {
+                                firstChoice = "1. Ice-Cream"
+                                secondChoice = "2. Cake"
+                                errorText = "Meal Suggested:"
+                            }
+                            else {
+                                firstChoice = "Invalid Input"
+                                secondChoice = ""
+                                errorText = "use lowercase letters"
+                            }
+                        }
                     ) {
                         Text(text = "Suggestion")
                     }
                     
                     Button(
-                        onClick = { /*TODO*/ }
+                        onClick = { /*TODO*/
+                            timeOfDay = ""
+                            firstChoice = ""
+                            secondChoice = ""
+                            errorText = ""
+
+
+
+                        }
                     ) {
                         Text(text = "Reset")
                         
