@@ -63,7 +63,8 @@ class MainActivity : ComponentActivity() {
                 //input box
                 OutlinedTextField(
                     value = timeOfDay,
-                    onValueChange = { text -> timeOfDay = text }
+                    onValueChange = { text -> timeOfDay = text },
+                    placeholder = { Text(text = "e.g. morning")}
                 )
 
                 //spacer
