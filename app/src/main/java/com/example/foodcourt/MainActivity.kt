@@ -49,7 +49,7 @@ class MainActivity : ComponentActivity() {
             Column(
                 //it aligns the colomn
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize(),
             ) {
 
                 Text (
@@ -60,32 +60,32 @@ class MainActivity : ComponentActivity() {
 
 
                 )
-                //input box
-                OutlinedTextField(
-                    value = timeOfDay,
-                    onValueChange = { text -> timeOfDay = text },
-                    placeholder = { Text(text = "e.g. morning")}
-                )
+                            //input box
+                            OutlinedTextField(
+                                value = timeOfDay,
+                                onValueChange = { text -> timeOfDay = text },
+                                placeholder = { Text(text = "e.g. mornin")}
+                            )
 
-                //spacer
-                Spacer(modifier = Modifier.size(30.dp))
+                            //spacer
+                            Spacer(modifier = Modifier.size(30.dp))
 
-                Text (
-                    text = errorText,
-                    modifier = Modifier,
-                    color = Color.Red
-                )
-                Spacer(modifier = Modifier.size(30.dp))
+                            Text (
+                                text = errorText,
+                                modifier = Modifier,
+                                color = Color.Red
+                            )
+                            Spacer(modifier = Modifier.size(30.dp))
 
-                Text (text = firstChoice)
-                Text (text = secondChoice)
+                            Text (text = firstChoice)
+                            Text (text = secondChoice)
 
-                Spacer(modifier = Modifier.size(30.dp))
+                            Spacer(modifier = Modifier.size(30.dp))
 
-                Row {
-                    //suggest button
-                    Button(
-                        onClick = { /*TODO*/
+                            Row {
+                                //suggest button
+                                Button(
+                                    onClick = { /*TODO*/
 
                             //if statement for food selection
                             if (timeOfDay == "morning") {
